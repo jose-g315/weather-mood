@@ -1,9 +1,6 @@
-# project-trak
+# weather-mood
 
-Todo list style app to track projects and the tasks in them.
-<br>
-Uses localStorage for data persistence.
+App that displays the weather conditions for a specified location along with gifs that reflect the mood of the weather.
 
 ## Link
 
-https://jose-g315.github.io/project-trak/
