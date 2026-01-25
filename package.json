@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jose-g315/weather-mood"
+    "url": "git+https://github.com/jose-g315/weather-mood.git"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/jose-g315/weather-mood/issues"
   },
-  "homepage": "https://github.com/jose-g315/weather-mood#project-trak",
+  "homepage": "https://github.com/jose-g315/weather-mood#weather-mood",
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "css-loader": "^7.1.2",
@@ -37,6 +37,5 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
-  },
-  "type": "commonjs"
+  }
 }

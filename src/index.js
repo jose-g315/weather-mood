@@ -7,4 +7,4 @@ function initializeApp() {
   bindEvents();
 }
 
-//initializeApp();
+initializeApp();
