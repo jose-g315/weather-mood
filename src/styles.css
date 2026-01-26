@@ -14,9 +14,27 @@
 body {
   background-color: var(--bg);
   max-width: 2100px;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  border: 1px solid black;
 }
 /* app */
 .app {
+  display: flex;
+  max-width: 80%;
+}
+
+/* gif divs */
+.gif {
+  flex: 1;
+}
+/* weather div */
+.weather {
 }
