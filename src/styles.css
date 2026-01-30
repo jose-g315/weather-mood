@@ -88,3 +88,16 @@ div {
   align-items: center;
   gap: 5px;
 }
+
+@media (max-width: 600px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
