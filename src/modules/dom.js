@@ -1,5 +1,12 @@
 const weatherDetails = document.querySelector('.weatherDetails');
 const errorSpan = document.querySelector('span');
+const imgOne = document.querySelector('.imgOne');
+const imgTwo = document.querySelector('.imgTwo');
+
+function renderGifs(urlObject) {
+  imgOne.src = urlObject.urlOne;
+  imgTwo.src = urlObject.urlTwo;
+}
 
 function renderWeather(weather) {
   weatherDetails.textContent = '';
@@ -53,7 +60,7 @@ function renderError(error) {
   }
 }
 
-export { renderWeather, renderError };
+export { renderWeather, renderError, renderGifs };
 
 // conditions: weather.currentConditions.conditions,
 // icon: weather.currentConditions.icon,

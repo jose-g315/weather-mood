@@ -1,6 +1,7 @@
-import { getWeather } from './api';
-import { renderWeather, renderError } from './dom';
-import { getWeatherDetails } from './weather-logic';
+import { getGifs, getWeather } from './api';
+import { renderWeather, renderError, renderGifs } from './dom';
+import { getWeatherDetails, getGifUrl, getTemp } from './data-processing';
+import { getSearchTerm } from './utility';
 
 const weatherDetails = document.querySelector('.weatherDetails');
 const form = document.querySelector('form');
@@ -26,14 +27,22 @@ function handleButtonClicks(e) {
   }
 }
 
-async function handleFormSubmit(e, mode = 'us') {
+function handleFormSubmit(e, mode) {
   e.preventDefault();
+  getWeatherAndGifs(mode);
+}
+async function getWeatherAndGifs(mode = 'us') {
   const city = input.value.trim();
   try {
     const weather = await getWeather(city, mode);
-    const weatherObject = getWeatherDetails(weather);
-    console.log(weatherObject);
+    const weatherObject = getWeatherDetails(weather, mode);
     renderWeather(weatherObject);
+
+    const gifPromise = getGifs(getSearchTerm(getTemp()));
+
+    const gifData = await gifPromise;
+    const gifUrl = getGifUrl(gifData);
+    renderGifs(gifUrl);
   } catch (error) {
     renderError(error);
     console.log(error);
