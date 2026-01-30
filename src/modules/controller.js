@@ -36,7 +36,7 @@ async function getWeatherAndGifs(mode = 'us') {
   try {
     const weather = await getWeather(city, mode);
     const weatherObject = getWeatherDetails(weather, mode);
-    renderWeather(weatherObject);
+    renderWeather(weatherObject, mode);
 
     const gifPromise = getGifs(getSearchTerm(getTemp()));
 

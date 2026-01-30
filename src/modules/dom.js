@@ -8,45 +8,46 @@ function renderGifs(urlObject) {
   imgTwo.src = urlObject.urlTwo;
 }
 
-function renderWeather(weather) {
+function renderWeather(weather, mode) {
+  let windSpeed = null;
+  switch (mode) {
+    case 'metric':
+      windSpeed = 'kph';
+      break;
+    case 'us': {
+      windSpeed = 'mph';
+      break;
+    }
+  }
   weatherDetails.textContent = '';
   errorSpan.textContent = '';
   const div1 = document.createElement('div');
-  div1.textContent = `Weather Conditions: ${weather.conditions}`;
-  const div2 = document.createElement('div');
-  div2.textContent = weather.icon;
+  div1.textContent = `Weather Conditions:  ${weather.conditions}`;
+  const div2 = document.createElement('img');
+  let icon = weather.icon;
+  div2.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${icon}.png`;
   const div3 = document.createElement('div');
   div3.textContent = weather.day;
   const div4 = document.createElement('div');
-  div4.textContent = weather.temp;
+  div4.textContent = `Current Temperature:  ${weather.temp}`;
   const div5 = document.createElement('div');
-  div5.textContent = weather.feelsLike;
+  div5.textContent = `Feels Like:  ${weather.feelsLike}`;
   const div6 = document.createElement('div');
-  div6.textContent = weather.windSpeed;
+  div6.textContent = `Wind Speed:  ${weather.windSpeed} ${windSpeed}`;
   const div7 = document.createElement('div');
-  div7.textContent = weather.maxTemp;
+  div7.textContent = `Max Temp:  ${weather.maxTemp}`;
   const div8 = document.createElement('div');
-  div8.textContent = weather.minTemp;
+  div8.textContent = `Min Temp:  ${weather.minTemp}`;
 
+  const div9 = document.createElement('div');
   const cBtn = document.createElement('button');
   cBtn.textContent = 'Celsius';
   cBtn.dataset.action = 'c';
   const fBtn = document.createElement('button');
   fBtn.dataset.action = 'f';
   fBtn.textContent = 'Farenheit';
-
-  weatherDetails.append(
-    div1,
-    div2,
-    div3,
-    div4,
-    div5,
-    div6,
-    div7,
-    div8,
-    cBtn,
-    fBtn
-  );
+  div9.append(cBtn, fBtn);
+  weatherDetails.append(div1, div2, div3, div4, div5, div6, div7, div8, div9);
 }
 
 function renderError(error) {
@@ -61,12 +62,3 @@ function renderError(error) {
 }
 
 export { renderWeather, renderError, renderGifs };
-
-// conditions: weather.currentConditions.conditions,
-// icon: weather.currentConditions.icon,
-// day: weather.days[0].datetime,
-// temp: weather.currentConditions.temp,
-// feelsLike: weather.currentConditions.feelslike,
-// windSpeed: weather.currentConditions.windspeed,
-// maxTemp: weather.days[0].tempmax,
-// minTemp: weather.days[0].tempmin,
