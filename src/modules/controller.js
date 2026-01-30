@@ -32,6 +32,9 @@ function handleFormSubmit(e, mode) {
   getWeatherAndGifs(mode);
 }
 async function getWeatherAndGifs(mode = 'us') {
+  const loading = document.querySelector('#loading');
+  loading.classList.remove('hidden');
+
   const city = input.value.trim();
   try {
     const weather = await getWeather(city, mode);
@@ -46,6 +49,8 @@ async function getWeatherAndGifs(mode = 'us') {
   } catch (error) {
     renderError(error);
     console.log(error);
+  } finally {
+    loading.classList.add('hidden');
   }
 }
 

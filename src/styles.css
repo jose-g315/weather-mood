@@ -88,6 +88,22 @@ div {
   align-items: center;
   gap: 5px;
 }
+/* error */
+.error {
+  margin: 10px;
+  background-color: #c1584d;
+}
+/* loading component */
+#loading {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
 
 @media (max-width: 600px) {
   .app {

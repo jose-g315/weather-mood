@@ -29,15 +29,15 @@ function renderWeather(weather, mode) {
   const div3 = document.createElement('div');
   div3.textContent = weather.day;
   const div4 = document.createElement('div');
-  div4.textContent = `Current Temperature:  ${weather.temp}`;
+  div4.textContent = `Current Temperature:  ${weather.temp}\u00B0`;
   const div5 = document.createElement('div');
-  div5.textContent = `Feels Like:  ${weather.feelsLike}`;
+  div5.textContent = `Feels Like:  ${weather.feelsLike}\u00B0`;
   const div6 = document.createElement('div');
   div6.textContent = `Wind Speed:  ${weather.windSpeed} ${windSpeed}`;
   const div7 = document.createElement('div');
-  div7.textContent = `Max Temp:  ${weather.maxTemp}`;
+  div7.textContent = `Max Temp:  ${weather.maxTemp}\u00B0`;
   const div8 = document.createElement('div');
-  div8.textContent = `Min Temp:  ${weather.minTemp}`;
+  div8.textContent = `Min Temp:  ${weather.minTemp}\u00B0`;
 
   const div9 = document.createElement('div');
   const cBtn = document.createElement('button');

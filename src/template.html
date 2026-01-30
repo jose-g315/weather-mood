@@ -13,9 +13,16 @@
         <span class="error"></span>
         <form action="">
           <label for="city">Enter City:</label>
-          <input type="text" name="city" placeholder="city" required />
+          <input
+            id="city"
+            type="text"
+            name="city"
+            placeholder="city"
+            required
+          />
           <button type="submit">Search</button>
         </form>
+        <div id="loading" class="hidden">Loading...</div>
         <div class="weatherDetails"></div>
       </div>
       <div class="gif"><img class="imgTwo" /></div>
